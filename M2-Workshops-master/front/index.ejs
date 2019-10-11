@@ -18,7 +18,15 @@
     <li class="media my-4">
         <div class="media-body">
             <h5 class="mt-0 mb-1"><%= workshop.name %></h5>
-            <%= workshop.description %>        </div>        
+            <%= workshop.description %>  
+            <form action="/update-data" method = "post">
+                <button type="submit" value = "<%= workshop.name %>" name="workshopName" class="btn btn-success btn-lg">Edit</button>    
+            </form>
+            <form action="/remove-workshop" method = "post">
+                <button type="submit" value = "<%= workshop.name %>" name="workshopName" class="btn btn-danger btn-lg">Remove</button>    
+            </form>
+            
+         </div>        
     </li>
 <% }); %>
 </ul>
